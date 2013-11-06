@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var video = require('./routes/video');
 var http = require('http');
 var path = require('path');
 var dust = require('dustjs-linkedin');
@@ -32,6 +33,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/video', video.show);
+app.post('/video', video.upload);
+app.put('/video', video.upload);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

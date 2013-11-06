@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'EzMake.me - Do it yourself' });
+  res.render('index', { title: 'Go Figure - Do it yourself' });
 };
